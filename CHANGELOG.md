@@ -1,5 +1,67 @@
 # Changelog
 
+## 1.71.0 (2026-09-04)
+
+Full Changelog: [v1.70.1...v1.71.0](https://github.com/anthropics/anthropic-sdk-go/compare/v1.70.1...v1.71.0)
+
+### Features
+
+* **api:** add named types for organization compliance settings state ([5ce34ff](https://github.com/anthropics/anthropic-sdk-go/commit/5ce34ff6744be9469ff660bb51779b3765cdbaa7))
+
+
+### Chores
+
+* **examples:** refresh platform model IDs ([#327](https://github.com/anthropics/anthropic-sdk-go/issues/327)) ([4b064a1](https://github.com/anthropics/anthropic-sdk-go/commit/4b064a166c425daf0b213339aed86b3f0e105c75))
+* **tests:** reword the skip reason on the path-level query param tests ([c0b3d71](https://github.com/anthropics/anthropic-sdk-go/commit/c0b3d7111a3e0e4b1d22464a4ad442472f3f0a7b))
+
+## 1.70.1 (2026-09-03)
+
+Full Changelog: [v1.70.0...v1.70.1](https://github.com/anthropics/anthropic-sdk-go/compare/v1.70.0...v1.70.1)
+
+## 1.70.0 (2026-09-02)
+
+Full Changelog: [v1.69.0...v1.70.0](https://github.com/anthropics/anthropic-sdk-go/compare/v1.69.0...v1.70.0)
+
+### Features
+
+* **api:** add support for sending a workspace ID on more endpoints ([75477bf](https://github.com/anthropics/anthropic-sdk-go/commit/75477bf9202c59854d9f82fa6b55faeaaea78987))
+
+
+### Bug Fixes
+
+* **client:** surface non-JSON error response bodies in error messages ([7e89315](https://github.com/anthropics/anthropic-sdk-go/commit/7e8931517d165cf37f713e9184427b1b35135fe4))
+
+
+### Chores
+
+* **internal:** narrower codeowners scope ([24487eb](https://github.com/anthropics/anthropic-sdk-go/commit/24487eb8eef39a28cd4710af7e9e00e7049ddd14))
+* **internal:** revert codeowners change ([0717fba](https://github.com/anthropics/anthropic-sdk-go/commit/0717fbac8fff3802f52190b6472e44fc804598ef))
+
+
+### Documentation
+
+* **api:** update a few doc strings ([5c4b77b](https://github.com/anthropics/anthropic-sdk-go/commit/5c4b77b0563a03a1017d97a04ca103cbc023c799))
+
+## 1.69.0 (2026-09-01)
+
+Full Changelog: [v1.68.0...v1.69.0](https://github.com/anthropics/anthropic-sdk-go/compare/v1.68.0...v1.69.0)
+
+### Features
+
+* **api:** beta user profiles: add external_user_onboarded_at, remove relationship in favor of access_type ([d8b0de6](https://github.com/anthropics/anthropic-sdk-go/commit/d8b0de6b1490f1b80b293104205cdcc88810dd6c))
+* **api:** manual updates ([b508af4](https://github.com/anthropics/anthropic-sdk-go/commit/b508af4edc3efbccb98eed4fda2854bf16977a8c))
+* **api:** organization compliance settings, user-profile order_by, memory-store and toolset schema updates ([ee32922](https://github.com/anthropics/anthropic-sdk-go/commit/ee32922c1a52580862d8e5c3a59a6f2076503b88))
+
+
+### Bug Fixes
+
+* **client:** send only the base name of a file's path as its multipart filename ([fd15b77](https://github.com/anthropics/anthropic-sdk-go/commit/fd15b776141d978f26f042f65c799ce604624f84))
+
+
+### Documentation
+
+* **changelog:** detail the beta files/skills GA-shape change ([#426](https://github.com/anthropics/anthropic-sdk-go/issues/426)) ([3612d4c](https://github.com/anthropics/anthropic-sdk-go/commit/3612d4c4da501cfe17c05ada3cbbdb50852556bb))
+
 ## 1.68.0 (2026-08-27)
 
 Full Changelog: [v1.67.0...v1.68.0](https://github.com/anthropics/anthropic-sdk-go/compare/v1.67.0...v1.68.0)

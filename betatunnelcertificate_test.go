@@ -31,6 +31,7 @@ func TestBetaTunnelCertificateNewWithOptionalParams(t *testing.T) {
 		anthropic.BetaTunnelCertificateNewParams{
 			CACertificatePEM: "ca_certificate_pem",
 			Betas:            []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID:      anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -43,7 +44,7 @@ func TestBetaTunnelCertificateNewWithOptionalParams(t *testing.T) {
 }
 
 func TestBetaTunnelCertificateGetWithOptionalParams(t *testing.T) {
-	t.Skip("buildURL drops path-level query params (SDK-4349)")
+	t.Skip("buildURL drops path-level query params")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -59,8 +60,9 @@ func TestBetaTunnelCertificateGetWithOptionalParams(t *testing.T) {
 		context.TODO(),
 		"certificate_id",
 		anthropic.BetaTunnelCertificateGetParams{
-			TunnelID: "tunnel_id",
-			Betas:    []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			TunnelID:    "tunnel_id",
+			Betas:       []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID: anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -73,7 +75,7 @@ func TestBetaTunnelCertificateGetWithOptionalParams(t *testing.T) {
 }
 
 func TestBetaTunnelCertificateListWithOptionalParams(t *testing.T) {
-	t.Skip("buildURL drops path-level query params (SDK-4349)")
+	t.Skip("buildURL drops path-level query params")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -93,6 +95,7 @@ func TestBetaTunnelCertificateListWithOptionalParams(t *testing.T) {
 			Limit:           anthropic.Int(0),
 			Page:            anthropic.String("page"),
 			Betas:           []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID:     anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -120,8 +123,9 @@ func TestBetaTunnelCertificateArchiveWithOptionalParams(t *testing.T) {
 		context.TODO(),
 		"certificate_id",
 		anthropic.BetaTunnelCertificateArchiveParams{
-			TunnelID: "tunnel_id",
-			Betas:    []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			TunnelID:    "tunnel_id",
+			Betas:       []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID: anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {

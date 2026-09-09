@@ -15,7 +15,7 @@ import (
 )
 
 func TestBetaDeploymentRunGetWithOptionalParams(t *testing.T) {
-	t.Skip("buildURL drops path-level query params (SDK-4349)")
+	t.Skip("buildURL drops path-level query params")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -31,7 +31,8 @@ func TestBetaDeploymentRunGetWithOptionalParams(t *testing.T) {
 		context.TODO(),
 		"deployment_run_id",
 		anthropic.BetaDeploymentRunGetParams{
-			Betas: []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			Betas:       []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID: anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -44,7 +45,7 @@ func TestBetaDeploymentRunGetWithOptionalParams(t *testing.T) {
 }
 
 func TestBetaDeploymentRunListWithOptionalParams(t *testing.T) {
-	t.Skip("buildURL drops path-level query params (SDK-4349)")
+	t.Skip("buildURL drops path-level query params")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -67,6 +68,7 @@ func TestBetaDeploymentRunListWithOptionalParams(t *testing.T) {
 		Page:         anthropic.String("page"),
 		TriggerType:  anthropic.BetaManagedAgentsTriggerTypeSchedule,
 		Betas:        []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+		WorkspaceID:  anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 	})
 	if err != nil {
 		var apierr *anthropic.Error

@@ -31,6 +31,7 @@ func TestBetaEnvironmentWorkGetWithOptionalParams(t *testing.T) {
 		anthropic.BetaEnvironmentWorkGetParams{
 			EnvironmentID: "env_011CZkZ9X2dpNyB7HsEFoRfW",
 			Betas:         []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID:   anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -64,7 +65,8 @@ func TestBetaEnvironmentWorkUpdateWithOptionalParams(t *testing.T) {
 					"foo": "string",
 				},
 			},
-			Betas: []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			Betas:       []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID: anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -77,7 +79,7 @@ func TestBetaEnvironmentWorkUpdateWithOptionalParams(t *testing.T) {
 }
 
 func TestBetaEnvironmentWorkListWithOptionalParams(t *testing.T) {
-	t.Skip("buildURL drops path-level query params (SDK-4349)")
+	t.Skip("buildURL drops path-level query params")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -199,7 +201,7 @@ func TestBetaEnvironmentWorkPollWithOptionalParams(t *testing.T) {
 }
 
 func TestBetaEnvironmentWorkStatsWithOptionalParams(t *testing.T) {
-	t.Skip("buildURL drops path-level query params (SDK-4349)")
+	t.Skip("buildURL drops path-level query params")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -215,7 +217,8 @@ func TestBetaEnvironmentWorkStatsWithOptionalParams(t *testing.T) {
 		context.TODO(),
 		"env_011CZkZ9X2dpNyB7HsEFoRfW",
 		anthropic.BetaEnvironmentWorkStatsParams{
-			Betas: []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			Betas:       []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID: anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -247,7 +250,8 @@ func TestBetaEnvironmentWorkStopWithOptionalParams(t *testing.T) {
 			BetaSelfHostedWorkStopRequest: anthropic.BetaSelfHostedWorkStopRequestParam{
 				Force: anthropic.Bool(true),
 			},
-			Betas: []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			Betas:       []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID: anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {

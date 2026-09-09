@@ -14,7 +14,7 @@ import (
 )
 
 func TestBetaSessionThreadEventListWithOptionalParams(t *testing.T) {
-	t.Skip("buildURL drops path-level query params (SDK-4349)")
+	t.Skip("buildURL drops path-level query params")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -30,10 +30,11 @@ func TestBetaSessionThreadEventListWithOptionalParams(t *testing.T) {
 		context.TODO(),
 		"sthr_011CZkZVWa6oIjw0rgXZpnBt",
 		anthropic.BetaSessionThreadEventListParams{
-			SessionID: "sesn_011CZkZAtmR3yMPDzynEDxu7",
-			Limit:     anthropic.Int(0),
-			Page:      anthropic.String("page"),
-			Betas:     []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			SessionID:   "sesn_011CZkZAtmR3yMPDzynEDxu7",
+			Limit:       anthropic.Int(0),
+			Page:        anthropic.String("page"),
+			Betas:       []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID: anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {

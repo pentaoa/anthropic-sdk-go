@@ -33,6 +33,7 @@ func TestBetaMemoryStoreMemoryVersionGetWithOptionalParams(t *testing.T) {
 			MemoryStoreID: "memory_store_id",
 			View:          anthropic.BetaManagedAgentsMemoryViewBasic,
 			Betas:         []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID:   anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -45,7 +46,7 @@ func TestBetaMemoryStoreMemoryVersionGetWithOptionalParams(t *testing.T) {
 }
 
 func TestBetaMemoryStoreMemoryVersionListWithOptionalParams(t *testing.T) {
-	t.Skip("buildURL drops path-level query params (SDK-4349)")
+	t.Skip("buildURL drops path-level query params")
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -72,6 +73,7 @@ func TestBetaMemoryStoreMemoryVersionListWithOptionalParams(t *testing.T) {
 			SessionID:        anthropic.String("session_id"),
 			View:             anthropic.BetaManagedAgentsMemoryViewBasic,
 			Betas:            []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID:      anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
@@ -101,6 +103,7 @@ func TestBetaMemoryStoreMemoryVersionRedactWithOptionalParams(t *testing.T) {
 		anthropic.BetaMemoryStoreMemoryVersionRedactParams{
 			MemoryStoreID: "memory_store_id",
 			Betas:         []anthropic.AnthropicBeta{anthropic.AnthropicBetaMessageBatches2024_09_24},
+			WorkspaceID:   anthropic.String("wrkspc_011CZkZaBF1tNoB5wlCeusgy"),
 		},
 	)
 	if err != nil {
